@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>วันครบรอบของเรา 💖</title>
+
+  <!-- 🌈 ฟอนต์ลายมือจาก Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Itim', cursive;
+      background: linear-gradient(to bottom right, #ffd6e0, #e0f7fa);
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background-color: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #ff699b;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #777;
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 600px;
+      height: 500px;
+      margin: 2rem auto;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      background: none;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide.active {
+      display: flex;
+    }
+
+    .slide img {
+      height: 100%;
+      width: auto;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+      object-fit: contain;
+      border-radius: 1rem;
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.8);
+      border: none;
+      padding: 0.8rem 1.2rem;
+      font-size: 2rem;
+      color: #ff69b4;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 2;
+      transition: background-color 0.3s;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: #ffe4ec;
+    }
+
+    .prev { left: 15px; }
+    .next { right: 15px; }
+
+    .timeline {
+      margin: 3rem auto;
+      max-width: 800px;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .timeline h2 {
+      color: #f06292;
+      margin-bottom: 1rem;
+    }
+
+    .timeline p {
+      margin-bottom: 1rem;
+      background-color: #fff0f5;
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .btn-love {
+      display: block;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      background-color: #ffc1e3;
+      color: #333;
+      border: none;
+      border-radius: 2rem;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #fff0f5;
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      z-index: 10;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .hearts {
+      position: fixed;
+      bottom: -10px;
+      width: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: 0;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+      animation: float 6s infinite ease-in;
+      opacity: 0.7;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-800px) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    audio {
+      display: block;
+      margin: 1rem auto;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      .slideshow-container {
+        max-width: 90%;
+        height: 400px;
+      }
+
+      .prev, .next {
+        font-size: 1.5rem;
+        padding: 0.6rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 💕 เพลงบรรเลง -->
+  <audio controls autoplay loop>
+    <source src="mp3/- Three Man Down _Official MV_.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- 🥰 ส่วนหัว -->
+  <header>
+    <h1>สุขสันต์วันครบรอบ 💕</h1>
+    <p>วันที่พิเศษของเรา 🌸</p>
+  </header>
+
+  <!-- 📸 สไลด์โชว์ -->
+  <div class="slideshow-container">
+    <div class="slide"><img src="img/1.1.jpg" alt="รูป 1"></div>
+    <div class="slide"><img src="img/1.2.jpg" alt="รูป 2"></div>
+    <div class="slide"><img src="img/1.3.jpg" alt="รูป 3"></div>
+    <div class="slide"><img src="img/1.4.jpg" alt="รูป 4"></div>
+    <div class="slide"><img src="img/1.5.jpg" alt="รูป 5"></div>
+    <div class="slide"><img src="img/1.6.jpg" alt="รูป 6"></div>
+    <div class="slide"><img src="img/1.7.jpg" alt="รูป 7"></div>
+    <div class="slide"><img src="img/1.8.jpg" alt="รูป 8"></div>
+    <div class="slide"><img src="img/1.9.jpg" alt="รูป 9"></div>
+
+    <button class="prev" onclick="plusSlides(-1)">❮</button>
+    <button class="next" onclick="plusSlides(1)">❯</button>
+  </div>
+
+  <!-- 📖 ไทม์ไลน์ความรัก -->
+  <div class="timeline">
+    <h2 style="font-size: 2.5rem; color: #f06292;">เรื่องราวของเรา 💌</h2>
+    <p>เค้าขอให้เรารักกันไปนานๆ แบบไม่มีวันหมดรักเลยน้า 💕<br>
+        ทุกๆ วันข้างหน้า…
+        เค้าขอให้เรายังจับมือกันแน่นๆ แบบนี้
+        ไม่ว่าจะทุกข์หรือสุข เตงก็ยังมีเค้าเสมอ 🤝</p>
+    <p>เค้าจะอยู่ข้างๆ เตง
+        ในวันที่เตงยิ้ม หรือแม้แต่วันที่เตงร้องไห้ 🥺<br>
+        ขอบคุณที่เป็นพลังบวกให้กันตลอดเลยน้า
+        เค้ารักเตงมากๆ แบบมากที่สุดในโลกกก 🌏💘</p>
+    <p>แค่มีเตงอยู่ตรงนี้...
+        ก็ไม่มีอะไรน่ากลัวอีกต่อไปแล้วนะ 🫶</p>
+  </div>
+
+  <!-- 💬 ปุ่มเปิดข้อความพิเศษ -->
+  <button class="btn-love" onclick="showPopup()">คลิกเพื่อดูข้อความพิเศษ 💝</button>
+
+  <div class="popup" id="popup">
+    <h2>รักเธอที่สุดในโลกเลย 🌌</h2>
+    <p>อยู่ด้วยกันไปตลอดเลยนะไอต้าวหมาเเก่ 💖</p>
+    <button class="btn-love" onclick="hidePopup()">ปิด</button>
+  </div>
+
+  <!-- ❤️ หัวใจลอย -->
+  <div class="hearts" id="hearts"></div>
+
+  <script>
+    let slideIndex = 0;
+    let slides = document.getElementsByClassName("slide");
+    let autoSlideInterval;
+
+    function showSlide(index) {
+      if (index >= slides.length) slideIndex = 0;
+      else if (index < 0) slideIndex = slides.length - 1;
+      else slideIndex = index;
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+      }
+      slides[slideIndex].classList.add("active");
+    }
+
+    function plusSlides(n) {
+      clearInterval(autoSlideInterval);
+      showSlide(slideIndex + n);
+      autoSlideInterval = setInterval(() => showSlide(slideIndex + 1), 4000);
+    }
+
+    function startSlideShow() {
+      showSlide(slideIndex);
+      autoSlideInterval = setInterval(() => showSlide(slideIndex + 1), 4000);
+    }
+
+    function showPopup() {
+      document.getElementById('popup').style.display = 'block';
+    }
+
+    function hidePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 85%)`;
+      heart.style.animationDuration = 4 + Math.random() * 3 + 's';
+      document.getElementById('hearts').appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      startSlideShow();
+      setInterval(createHeart, 300);
+    });
+  </script>
+</body>
+</html>
